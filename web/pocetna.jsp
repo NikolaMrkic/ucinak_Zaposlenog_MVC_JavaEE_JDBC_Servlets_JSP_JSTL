@@ -19,14 +19,18 @@
         
             
             
-        
+            <div class="pocetdaStranaDvadugmeta">
                 <form action="unosZaposlenog.jsp">
                 
             <button class="btnDodajZaposlenog"> Dodaj zaposlenog </button>
             
               </form>
+            
+            <form action="dodavanjeZaposlenogUtim.jsp">
+                 
+        <button class="btnDodajZaposlenog"> Dodaj zaposlenog u TIM </button>
         
-         
+         </form>
             
              <div class="footer"><h6>© 2017 made by Nikola Mrkic </h6></div>
          </div>

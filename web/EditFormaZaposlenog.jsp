@@ -16,7 +16,7 @@
         
         
         <div class="pozadinaEditFormaZaposlenog">
-            <div class="header"><h1>Promena  zaposlenog</h1></div>
+            <div class="header"><h2>Promena  zaposlenog</h2></div>
             
             <div class="promenaZaposlenog">
             

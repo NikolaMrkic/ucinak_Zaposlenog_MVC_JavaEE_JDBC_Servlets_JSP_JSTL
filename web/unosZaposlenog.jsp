@@ -25,7 +25,7 @@
        
         
          <form action="unosZaposlenog"method="get">
-            <h2>Unos zaposlenog</h2>
+            <h1>Unos zaposlenog</h1>
             <table  id="tabelaUnosZaposlenih"> 
                 
                 
