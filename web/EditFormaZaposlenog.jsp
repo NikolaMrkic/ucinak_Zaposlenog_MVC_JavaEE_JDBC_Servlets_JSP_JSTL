@@ -23,7 +23,7 @@
         <form action="updateZaposlenog" method="POST">
             
             <c:forEach var="vehicle" items="${list}">
-            <input type="text" name="id" value="${Zaposleni.id}"/>
+                <input type="hidden" name="id" value="${Zaposleni.id}"/>
             
            <table  id="tabelaUnosZaposlenih"> 
                 <tr>

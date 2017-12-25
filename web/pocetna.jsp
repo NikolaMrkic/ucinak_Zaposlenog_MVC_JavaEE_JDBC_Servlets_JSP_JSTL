@@ -31,6 +31,12 @@
         <button class="btnDodajZaposlenog"> Dodaj zaposlenog u TIM </button>
         
          </form>
+                
+                 <form action="dodavanjeTimaUProjekat.jsp">
+                 
+        <button class="btnDodajZaposlenog"> Dodaj TIM u Projekat </button>
+        
+         </form>
             
              <div class="footer"><h6>© 2017 made by Nikola Mrkic </h6></div>
          </div>

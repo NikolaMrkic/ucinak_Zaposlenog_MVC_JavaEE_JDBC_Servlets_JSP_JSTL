@@ -32,7 +32,7 @@ public class EditServletZaposlenog extends HttpServlet {
            String id = request.getParameter("id");
         int ID = Integer.parseInt(id);     
         
-        List<Zaposleni> z  = (List<Zaposleni>) Kontroler.getInstance().vratiOdabranogZaposlenog(ID);
+      Zaposleni z  =  Kontroler.getInstance().vratiOdabranogZaposlenog(ID);
        request.setAttribute("Zaposleni", z);
       //PrintWriter pw=response.getWriter();
          //pw.print("Zaposleni");

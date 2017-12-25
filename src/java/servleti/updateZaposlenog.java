@@ -39,7 +39,7 @@ public class updateZaposlenog extends HttpServlet {
        String pozicija=request.getParameter("tfPoZ" );
       /*   PrintWriter pw=response.getWriter();
          pw.print(ime+" "+prezime+" "+pozicija+" "+);*/
-      Kontroler.getInstance().updateZaposlenog(ime, prezime, ide, pozicija,jmbg);
+      Kontroler.getInstance().updateZaposlenog(ime, prezime,jmbg , pozicija,ide);
         
          request.getRequestDispatcher("unosZaposlenog.jsp").forward(request, response);
     }

@@ -25,6 +25,8 @@
        
         
          <form action="unosZaposlenog"method="get">
+             
+          
             <h1>Unos zaposlenog</h1>
             <table  id="tabelaUnosZaposlenih"> 
                 
@@ -58,7 +60,7 @@
          
          <form class="unosIPrikazZaposlenog"
          
-         <h2>Prikaz zaposlenih</h2>
+         <h1>Prikaz zaposlenih</h1>
          
          <table id="tabelaPrikazZaposlenihth">
             

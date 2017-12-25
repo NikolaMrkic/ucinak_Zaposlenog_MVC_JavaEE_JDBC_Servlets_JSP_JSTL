@@ -117,20 +117,15 @@ public class DBKomunikacija {
         }
     }
 
-    public void updateZaposlenog(String Ime, String Prezime, int jmbg, String Pozicija, int ide) {
+    public void updateZaposlenog(String ime, String prezime, int jmbg, String pozicija, int ide) {
         
-        String upit = "UPDATE zaposleni SET Ime=?,Prezime=?,jmbg=?,Pozicija=? WHERE id=?";
+        String upit = "UPDATE zaposleni SET Ime='"+ime+"',Prezime='"+prezime+"',jmbg='"+jmbg+"',Pozicija='"+pozicija+"' WHERE id= '" + ide + "'";
         
         try {
+            Statement st = con.createStatement();
             
-            PreparedStatement ps = con.prepareStatement(upit);
-            ps.setString(1, Ime);
-            ps.setString(2, Prezime);
-            ps.setInt(3, jmbg);
-            ps.setString(3, Pozicija);
-            ps.setInt(4, ide);
            
-            ps.executeUpdate();
+            st.executeUpdate(upit);
         } catch (SQLException e) {
              Logger.getLogger(DBKomunikacija.class.getName()).log(Level.SEVERE, null, e);
         }
@@ -172,6 +167,35 @@ public class DBKomunikacija {
         } catch (SQLException ex) {
             Logger.getLogger(DBKomunikacija.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    public ArrayList<Zaposleni> vratiZaposlene() {
+       
+        ResultSet rs = null;
+        Statement st = null;
+        ArrayList<Zaposleni> al= new ArrayList<>();
+        String upit = "SELECT `id`, `Ime`, `Prezime`, `jmbg`, `Pozicija` FROM `zaposleni`";
+        try {
+            
+            st = con.createStatement();
+            rs = st.executeQuery(upit);
+            
+            while(rs.next()){
+            
+                Zaposleni z = new Zaposleni();
+                z.setId(rs.getInt("id"));
+                z.setIme(rs.getString("Ime"));
+                z.setPrezime(rs.getString("Prezime"));
+                z.setJmbg(rs.getInt("jmbg"));
+                z.setPozicija(rs.getString("Pozicija"));
+                al.add(z);
+                
+            
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DBKomunikacija.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return al;
     }
 
     

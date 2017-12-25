@@ -177,7 +177,7 @@ h2{
     height: 50px;
     margin: auto;
     border: 1px solid #000000;
-    background-color: #4CAF50;
+    background-color: #349Bdb;
    
      text-align: center;
   
@@ -188,7 +188,7 @@ h2{
        width:auto;
     margin: auto;
     border: 1px solid #000000;
-    background-color:#4CAF50;
+    background-color:#349Bdb;
      color: #fff;
      text-align: left;
      
@@ -221,7 +221,9 @@ h2{
     margin-left: 465px;
     margin-top: 102px;
 }
-
+#divUnosZaposlenog{
+    
+}
 
 #tabelaUnosZaposlenih{
      border-collapse: collapse;
@@ -238,6 +240,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 #tabelaUnosZaposlenihth {
     background-color: #4CAF50;
     color: white;
+    
 }
 .btnUnesiZaposlenog{
     padding: 5px;

@@ -4,6 +4,10 @@
     Author     : nikol
 --%>
 
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.DriverManager"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -31,15 +35,19 @@ t.id= p.id_Tim;
           <div class="header"><h2>Tim</h2></div>
         <div class="pozadinaDodavaneZapolenogUTim">
         <div class="divZaposleniTim">
-            
-        <select class="combobox" name="cbZaposleni">
+            <form action="unosTimaa"method="get">
+           
+        <select name="cbZaposleni">
             <option>naziv zaposlenog</option>
+            <option>${y.Ime}</option>
+           
              </select>
             <br></br>
             <input type="text" name="nazivTima" placeholder="naziv tima"> 
             
            
             <input type="submit" class="btnZaposleniTim" value="Unesi" />
+            </form>
             </div>
              <table id="tabelaPrikazZaposlenogINjegovogUcinka">
             

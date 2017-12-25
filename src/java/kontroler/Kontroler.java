@@ -19,6 +19,7 @@ public class Kontroler {
     public static Kontroler instance;
    ArrayList<KorisnikAplikacije> k = new ArrayList<>();
     ArrayList<Zaposleni> z = new ArrayList<>();
+    Zaposleni zaposleni = new Zaposleni();
    
     
     public static Kontroler getInstance(){
@@ -49,10 +50,10 @@ public class Kontroler {
         DBKomunikacija.getInstance().zatvoriKonekciju();
     }
 
-    public void updateZaposlenog(String Ime, String Prezime, int jmbg, String Pozicija, int ide) {
+    public void updateZaposlenog(String ime, String prezime, int jmbg, String pozicija, int ide) {
        
         DBKomunikacija.getInstance().otvoriKonekciju();
-        DBKomunikacija.getInstance().updateZaposlenog(Ime,Prezime,jmbg,Pozicija,ide);
+        DBKomunikacija.getInstance().updateZaposlenog(ime,prezime,jmbg,pozicija,ide);
         DBKomunikacija.getInstance().zatvoriKonekciju();
     }
 
@@ -63,14 +64,22 @@ public class Kontroler {
     }
 
     public Zaposleni vratiOdabranogZaposlenog(int ID) {
-          Zaposleni z = null;
+         
        DBKomunikacija.getInstance().otvoriKonekciju();
-       DBKomunikacija.getInstance().vratiOdabranogZaposlenog(ID);
+       zaposleni = DBKomunikacija.getInstance().vratiOdabranogZaposlenog(ID);
        DBKomunikacija.getInstance().zatvoriKonekciju();
+        return zaposleni;
+       
+       
+       
+    }
+
+    public ArrayList<Zaposleni> vratiZaposlene() {
+        
+        DBKomunikacija.getInstance().otvoriKonekciju();
+        z = DBKomunikacija.getInstance().vratiZaposlene();
+        DBKomunikacija.getInstance().zatvoriKonekciju();
         return z;
-       
-       
-       
     }
 
     
