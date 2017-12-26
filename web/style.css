@@ -10,8 +10,8 @@ and open the template in the editor.
 body{
     margin: 0;
     padding: 0;
-   
-   
+
+
 }
 body, html {
     height: 100%;
@@ -25,19 +25,19 @@ h2{
 }
 
 .pozadinaDodavaneZapolenogUTim{
-     background-image: url('http://www.guidescomparatifs.com/wp-content/uploads/2015/09/9.jpg');
-     height: 100%;
+    background-image: url('http://www.guidescomparatifs.com/wp-content/uploads/2015/09/9.jpg');
+    height: 100%;
 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    
+
 }
 .pozadinaPocetneForme{
-    
-    
- background-image: url('http://blog.blominvestbank.com/wp-content/uploads/2017/10/pmi-6.jpg');
-     height: 100%;
+
+
+    background-image: url('http://blog.blominvestbank.com/wp-content/uploads/2017/10/pmi-6.jpg');
+    height: 100%;
 
     background-position: center;
     background-repeat: no-repeat;
@@ -45,7 +45,7 @@ h2{
 }
 .pozadinaUnosZaposlenog{
     background-image: url('http://www.factorasolutions.com/wp-content/uploads/Is-an-OEE-system-the-rapid-route-to-a-better-OEE.jpg');
-     height: 100%;
+    height: 100%;
 
     background-position: center;
     background-repeat: no-repeat;
@@ -54,7 +54,7 @@ h2{
 
 .pozadina{
     background-image: url('http://www.factorasolutions.com/wp-content/uploads/Is-an-OEE-system-the-rapid-route-to-a-better-OEE.jpg');
-     height: 100%;
+    height: 100%;
 
     background-position: center;
     background-repeat: no-repeat;
@@ -63,7 +63,7 @@ h2{
 .pozadinaEditFormaZaposlenog{
 
     background-image: url('https://hdwallsource.com/img/2017/12/business-desktop-hd-wallpaper-61250-63064-hd-wallpapers.jpg');
-     /* Full height */
+    /* Full height */
     height: 100%; 
 
     /* Center and scale the image nicely */
@@ -71,15 +71,15 @@ h2{
     background-repeat: no-repeat;
     background-size: cover;
 
-    }
-    
-    .promenaZaposlenog{
-         margin-right: auto; margin-left: auto; width: 800px;
-         
-    }
-    
-    .promenaZaposlenog  .btnPromeniZaposlenog{
-        padding: 5px;
+}
+
+.promenaZaposlenog{
+    margin-right: auto; margin-left: auto; width: 800px;
+
+}
+
+.promenaZaposlenog  .btnPromeniZaposlenog{
+    padding: 5px;
     width: 420px;
     height: 40px;
     background-color: #349Bdb;
@@ -87,21 +87,21 @@ h2{
     border-radius: 3px;
     border: 0;
     font-size: 18px;
-     margin-right: auto; margin-left: auto;
-    }
-    .btnPromeniZaposlenog{
-      display: flex;
-  align-items: center;
-  justify-content: center;
-    }
-   
+    margin-right: auto; margin-left: auto;
+}
+.btnPromeniZaposlenog{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 .divLogIn{
     width: 450px;
     overflow:  hidden;
     margin: auto;
     margin-top: auto;
-    
+
 }
 
 .divLogIn input{
@@ -114,7 +114,7 @@ h2{
 }
 
 .divLogIn h1{
-    
+
     text-align: center;
     margin-bottom: 30px;
 }
@@ -135,7 +135,7 @@ h2{
     overflow:  hidden;
     margin: auto;
     margin-top: auto;
-    
+
 }
 .divZaposleniTim input{
     width: 420px;
@@ -157,15 +157,15 @@ h2{
     font-size: 18px;
 }
 .combobox{
-        
-        top: auto;
-        left: auto;
-        width: 421px;
-        height: 23px;
-        margin-top: 10px;
-      }
+
+    top: auto;
+    left: auto;
+    width: 421px;
+    height: 23px;
+    margin-top: 10px;
+}
 .divZaposleniTim h1 {
-    
+
     text-align: center;
     margin-bottom: 30px;
     margin-top:  auto;
@@ -178,38 +178,38 @@ h2{
     margin: auto;
     border: 1px solid #000000;
     background-color: #349Bdb;
-   
-     text-align: center;
-  
+
+    text-align: center;
+
 }
- 
+
 .headerPocetnaStrana{
-      height: 50px;
-       width:auto;
+    height: 50px;
+    width:auto;
     margin: auto;
     border: 1px solid #000000;
     background-color:#349Bdb;
-     color: #fff;
-     text-align: left;
-     
-     
-  
+    color: #fff;
+    text-align: left;
+
+
+
 }
 
 
 .footer{ position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-    height: 50px;
-   background-color: #349Bdb;
-     color: #fff;
-   text-align: center;
+         left: 0;
+         bottom: 0;
+         width: 100%;
+         height: 50px;
+         background-color: #349Bdb;
+         color: #fff;
+         text-align: center;
 }
 
 
 
- .btnDodajZaposlenog {
+.btnDodajZaposlenog {
     padding: 5px;
     width: 420px;
     height: 40px;
@@ -222,11 +222,11 @@ h2{
     margin-top: 102px;
 }
 #divUnosZaposlenog{
-    
+
 }
 
 #tabelaUnosZaposlenih{
-     border-collapse: collapse;
+    border-collapse: collapse;
     width: 100%;
 }
 #tabelaUnosZaposlenih th, td{
@@ -240,7 +240,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 #tabelaUnosZaposlenihth {
     background-color: #4CAF50;
     color: white;
-    
+
 }
 .btnUnesiZaposlenog{
     padding: 5px;
@@ -275,19 +275,19 @@ tr:nth-child(even){background-color: #f2f2f2}
 
 
 #tabelaPrikazZaposlenogINjegovogUcinka{
-     border-collapse: collapse;
+    border-collapse: collapse;
     width: 100%;
 }
 #tabelaPrikazZaposlenogINjegovogUcinka th {
     text-align: left;
     padding: 8px;
-    
+
 }
 #tabelaPrikazZaposlenogINjegovogUcinka  td{
     text-align: left;
     padding: 8px;
     color: black
-    
+
 }
 
 

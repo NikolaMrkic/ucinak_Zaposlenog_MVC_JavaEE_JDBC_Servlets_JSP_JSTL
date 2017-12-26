@@ -5,38 +5,35 @@
  */
 package servleti;
 
-import dbkomunikacija.DBKomunikacija;
-import domen.Zaposleni;
-
-
 import java.io.IOException;
 import java.io.PrintWriter;
-import static java.util.Collections.list;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import domen.Zaposleni;
+import java.util.ArrayList;
 import kontroler.Kontroler;
 
 /**
  *
  * @author nikol
  */
-public class EditServletZaposlenog extends HttpServlet {
+public class unosTimaa extends HttpServlet {
 
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-      
-           String id = request.getParameter("id");
-        int ID = Integer.parseInt(id);     
-        
-      Zaposleni z  =  Kontroler.getInstance().vratiOdabranogZaposlenog(ID);
-       request.setAttribute("Zaposleni", z);
-      //PrintWriter pw=response.getWriter();
-        //pw.print("Zaposleni");
-        request.getRequestDispatcher("EditFormaZaposlenog.jsp").forward(request, response);
+       
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -52,6 +49,23 @@ public class EditServletZaposlenog extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        
+        String Zaposleni = request.getParameter("cbZaposleni");
+        String ime= Zaposleni.substring(0, Zaposleni.indexOf(" "));
+        
+        int idZaposlenog = 0;
+        for(Zaposleni z : Kontroler.getInstance().vratiZaposlene()){
+            if(z.getIme().equalsIgnoreCase(ime)){
+            idZaposlenog = z.getId();
+               // System.out.println(z.getId());
+            }
+        }
+       String tim = request.getParameter("nazivTima");
+       Kontroler.getInstance().unesiZaposlenogUTim(tim,idZaposlenog);
+       // PrintWriter pw=response.getWriter();
+       //pw.print("Id JE "+idZaposlenog+"      "+tim);
+       
+       request.getRequestDispatcher("dodavanjeZaposlenogUtim.jsp").forward(request, response);
     }
 
     /**

@@ -24,51 +24,50 @@ import java.util.logging.Logger;
  * @author nikol
  */
 public class DBKomunikacija {
-    
-   public static DBKomunikacija broker;
-   public Connection con;
-   public PreparedStatement ps;
-   public ResultSet rs;
-   
-   public DBKomunikacija (){
-   ucitajDrajver();
-   }
+
+    public static DBKomunikacija broker;
+    public Connection con;
+    public PreparedStatement ps;
+    public ResultSet rs;
+
+    public DBKomunikacija() {
+        ucitajDrajver();
+    }
 
     private void ucitajDrajver() {
-        
+
         try {
-            
+
             Class.forName("com.mysql.jdbc.Driver");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
-    
-    public void otvoriKonekciju(){
-    
+
+    public void otvoriKonekciju() {
+
         try {
             con = DriverManager.getConnection("jdbc:mysql://localhost/ucinak_zaposlenog", "root", "");
-            
-        } catch (SQLException e) {
-            
-            JOptionPane.showMessageDialog(null, "Komunikacija sa serverom nije uspela !"
 
-					+ "Proverite da li je Server pokrenut!");
+        } catch (SQLException e) {
+
+            JOptionPane.showMessageDialog(null, "Komunikacija sa serverom nije uspela !"
+                    + "Proverite da li je Server pokrenut!");
             e.printStackTrace();
         }
     }
-    
-    public static DBKomunikacija getInstance(){
-    
-        if(broker == null){
-            
-            broker= new DBKomunikacija();
+
+    public static DBKomunikacija getInstance() {
+
+        if (broker == null) {
+
+            broker = new DBKomunikacija();
         }
         return broker;
     }
-    
-    public void zatvoriKonekciju(){
-        
+
+    public void zatvoriKonekciju() {
+
         try {
             con.close();
         } catch (SQLException e) {
@@ -81,19 +80,19 @@ public class DBKomunikacija {
         java.sql.Statement st = null;
         ArrayList<KorisnikAplikacije> al = new ArrayList<>();
         String upit = "SELECT korisnicko_ime, lozinka FROM korisnik_aplikacije";
-        
+
         try {
-                st = con.createStatement();
-                rs = st.executeQuery(upit);
-                
-                while(rs.next()){
-                    
-                    KorisnikAplikacije ka = new KorisnikAplikacije();
-                    ka.setKorisnickoIme(rs.getString("korisnicko_ime"));
-                    ka.setLozinka(rs.getString("lozinka"));
-                    al.add(ka);
-                }
-            
+            st = con.createStatement();
+            rs = st.executeQuery(upit);
+
+            while (rs.next()) {
+
+                KorisnikAplikacije ka = new KorisnikAplikacije();
+                ka.setKorisnickoIme(rs.getString("korisnicko_ime"));
+                ka.setLozinka(rs.getString("lozinka"));
+                al.add(ka);
+            }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -101,87 +100,86 @@ public class DBKomunikacija {
     }
 
     public void upisiZaposlenog(String ime, String prezime, int jmbg, String pozicija) {
-        
-        String upit  = "INSERT INTO zaposleni( Ime, Prezime, jmbg, Pozicija) VALUES (?,?,?,?) ";
-        
+
+        String upit = "INSERT INTO zaposleni( Ime, Prezime, jmbg, Pozicija) VALUES (?,?,?,?) ";
+
         try {
-              PreparedStatement ps = con.prepareStatement(upit);
-              ps.setString(1, ime);
-              ps.setString(2, prezime);
-              ps.setInt(3, jmbg);
-              ps.setString(4, pozicija);
-              ps.executeUpdate();
-              
+            PreparedStatement ps = con.prepareStatement(upit);
+            ps.setString(1, ime);
+            ps.setString(2, prezime);
+            ps.setInt(3, jmbg);
+            ps.setString(4, pozicija);
+            ps.executeUpdate();
+
         } catch (SQLException e) {
-           
+
         }
     }
 
     public void updateZaposlenog(String ime, String prezime, int jmbg, String pozicija, int ide) {
-        
-        String upit = "UPDATE zaposleni SET Ime='"+ime+"',Prezime='"+prezime+"',jmbg='"+jmbg+"',Pozicija='"+pozicija+"' WHERE id= '" + ide + "'";
-        
+
+        String upit = "UPDATE zaposleni SET Ime='" + ime + "',Prezime='" + prezime + "',jmbg='" + jmbg + "',Pozicija='" + pozicija + "' WHERE id= '" + ide + "'";
+
         try {
             Statement st = con.createStatement();
-            
-           
+
             st.executeUpdate(upit);
         } catch (SQLException e) {
-             Logger.getLogger(DBKomunikacija.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(DBKomunikacija.class.getName()).log(Level.SEVERE, null, e);
         }
     }
 
     public Zaposleni vratiOdabranogZaposlenog(int ID) {
-        
-        String upit = "SELECT * FROM zaposleni WHERE id="+ID;
+
+        String upit = "SELECT * FROM zaposleni WHERE id=" + ID;
         Zaposleni z = new Zaposleni();
-        
+
         try {
-            
-             Statement  st = con.createStatement();
+
+            Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(upit);
-            
-            while(rs.next()){
-            
-            z.setId(rs.getInt("id"));
-            z.setIme(rs.getString("Ime"));
-            z.setPrezime(rs.getString("Prezime"));
-            z.setJmbg(rs.getInt("jmbg"));
-            z.setPozicija(rs.getString("Pozicija"));
-            
+
+            while (rs.next()) {
+
+                z.setId(rs.getInt("id"));
+                z.setIme(rs.getString("Ime"));
+                z.setPrezime(rs.getString("Prezime"));
+                z.setJmbg(rs.getInt("jmbg"));
+                z.setPozicija(rs.getString("Pozicija"));
+
             }
         } catch (SQLException e) {
-             Logger.getLogger(DBKomunikacija.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(DBKomunikacija.class.getName()).log(Level.SEVERE, null, e);
         }
         return z;
     }
 
     public void obrisiZaposlenog(int ID) {
-       
-        String upit = "DELETE FROM zaposleni WHERE id="+ID;
-        
+
+        String upit = "DELETE FROM zaposleni WHERE id=" + ID;
+
         try {
             Statement st = con.createStatement();
             st.executeUpdate(upit);
-            
+
         } catch (SQLException ex) {
             Logger.getLogger(DBKomunikacija.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     public ArrayList<Zaposleni> vratiZaposlene() {
-       
+
         ResultSet rs = null;
         Statement st = null;
-        ArrayList<Zaposleni> al= new ArrayList<>();
+        ArrayList<Zaposleni> al = new ArrayList<>();
         String upit = "SELECT `id`, `Ime`, `Prezime`, `jmbg`, `Pozicija` FROM `zaposleni`";
         try {
-            
+
             st = con.createStatement();
             rs = st.executeQuery(upit);
-            
-            while(rs.next()){
-            
+
+            while (rs.next()) {
+
                 Zaposleni z = new Zaposleni();
                 z.setId(rs.getInt("id"));
                 z.setIme(rs.getString("Ime"));
@@ -189,8 +187,7 @@ public class DBKomunikacija {
                 z.setJmbg(rs.getInt("jmbg"));
                 z.setPozicija(rs.getString("Pozicija"));
                 al.add(z);
-                
-            
+
             }
         } catch (SQLException ex) {
             Logger.getLogger(DBKomunikacija.class.getName()).log(Level.SEVERE, null, ex);
@@ -198,5 +195,20 @@ public class DBKomunikacija {
         return al;
     }
 
-    
+    public void unesizaposlenogUTim(String tim, int idZaposlenog) {
+
+        String upit = "INSERT INTO tim( nazivTima,id_Zaposleni) VALUES (?,?)";
+
+        try {
+            PreparedStatement ps = con.prepareStatement(upit);
+
+            ps.setString(1, tim);
+            ps.setInt(2, idZaposlenog);
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            Logger.getLogger(DBKomunikacija.class.getName()).log(Level.SEVERE, null, e);
+        }
+    }
+
 }
