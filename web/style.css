@@ -23,7 +23,14 @@ h1{
 h2{
     color: #fff;
 }
+.pozadinaDodavanjeTimaUProjekat{
+    background-image: url("/WEB/view/slide-1.jpg");
+    height: 100%;
 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .pozadinaDodavaneZapolenogUTim{
     background-image: url('http://www.guidescomparatifs.com/wp-content/uploads/2015/09/9.jpg');
     height: 100%;
@@ -47,8 +54,8 @@ h2{
     background-image: url('http://www.factorasolutions.com/wp-content/uploads/Is-an-OEE-system-the-rapid-route-to-a-better-OEE.jpg');
     height: 100%;
 
-    background-position: center;
     background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
 }
 
@@ -140,6 +147,7 @@ h2{
 .divZaposleniTim input{
     width: 420px;
     height: 35px;
+
     margin-bottom: 10px;
     border-radius:  10px;
     border: 1px solid silver;
@@ -158,11 +166,12 @@ h2{
 }
 .combobox{
 
-    top: auto;
+
     left: auto;
     width: 421px;
     height: 23px;
     margin-top: 10px;
+
 }
 .divZaposleniTim h1 {
 

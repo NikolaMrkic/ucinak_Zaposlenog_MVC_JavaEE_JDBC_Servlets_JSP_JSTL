@@ -211,4 +211,45 @@ public class DBKomunikacija {
         }
     }
 
+    public ArrayList<Tim> vratiTim() {
+        ResultSet rs = null;
+        Statement st = null;
+        ArrayList<Tim> al = new ArrayList<>();
+        String upit = "SELECT `id`, `nazivTima`, `id_Zaposleni` FROM `tim` ";
+        try {
+
+            st = con.createStatement();
+            rs = st.executeQuery(upit);
+
+            while (rs.next()) {
+
+                Tim t = new Tim();
+                t.setId(rs.getInt("id"));
+                t.setNazivTima(rs.getString("nazivTima"));
+                t.setId_Zaposleni(rs.getInt("id_Zaposleni"));
+                al.add(t);
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DBKomunikacija.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return al;
+    }
+
+    public void unesiTimUProjekat(String nazivProjekta, double brSati, int idTima) {
+
+        String upit = "INSERT INTO projekat( naziv_projekta, br_radnih_sati, id_Tim) VALUES(?,?,?)";
+
+        try {
+
+            PreparedStatement ps = con.prepareStatement(upit);
+            ps.setString(1, nazivProjekta);
+            ps.setDouble(2, brSati);
+            ps.setInt(3, idTima);
+            ps.executeUpdate();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DBKomunikacija.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }

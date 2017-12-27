@@ -8,6 +8,7 @@ package kontroler;
 import domen.Zaposleni;
 import dbkomunikacija.DBKomunikacija;
 import domen.KorisnikAplikacije;
+import domen.Tim;
 import java.util.ArrayList;
 
 /**
@@ -20,6 +21,7 @@ public class Kontroler {
     ArrayList<KorisnikAplikacije> k = new ArrayList<>();
     ArrayList<Zaposleni> z = new ArrayList<>();
     Zaposleni zaposleni = new Zaposleni();
+    ArrayList<Tim> t = new ArrayList<>();
 
     public static Kontroler getInstance() {
         if (instance == null) {
@@ -79,6 +81,20 @@ public class Kontroler {
 
         DBKomunikacija.getInstance().otvoriKonekciju();
         DBKomunikacija.getInstance().unesizaposlenogUTim(tim, idZaposlenog);
+        DBKomunikacija.getInstance().zatvoriKonekciju();
+    }
+
+    public ArrayList<Tim> vratiTim() {
+        
+        DBKomunikacija.getInstance().otvoriKonekciju();
+        t = DBKomunikacija.getInstance().vratiTim();
+        DBKomunikacija.getInstance().zatvoriKonekciju();
+        return t;
+    }
+
+    public void unesiTimUProjekat(String nazivProjekta ,double brSati, int idTima) {
+        DBKomunikacija.getInstance().otvoriKonekciju();
+        DBKomunikacija.getInstance().unesiTimUProjekat(nazivProjekta,brSati,idTima);
         DBKomunikacija.getInstance().zatvoriKonekciju();
     }
 
