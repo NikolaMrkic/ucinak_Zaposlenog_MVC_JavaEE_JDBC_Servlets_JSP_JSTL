@@ -252,4 +252,28 @@ public class DBKomunikacija {
             Logger.getLogger(DBKomunikacija.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    public Projekat vratiOdabratiTimUProjektu(int ID) {
+       String upit = "SELECT * FROM projekat WHERE id=" + ID;
+        Projekat p = new Projekat();
+
+        try {
+
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(upit);
+
+            while (rs.next()) {
+
+                
+                p.setId(rs.getInt("id"));
+                p.setNazivProjekta(rs.getString("naziv_projekta"));
+                p.setBrRadihSai(rs.getDouble("br_radnih_sati"));
+                p.setIdTim(rs.getInt("id_Tim"));
+
+            }
+        } catch (SQLException e) {
+            Logger.getLogger(DBKomunikacija.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return p;
+    }
 }

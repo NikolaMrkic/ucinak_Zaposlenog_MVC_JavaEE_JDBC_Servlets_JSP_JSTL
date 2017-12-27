@@ -11,7 +11,7 @@
 <sql:setDataSource driver="com.mysql.jdbc.Driver" var="con" url="jdbc:mysql://localhost/ucinak_zaposlenog" user="root" password="" />
 
 <sql:query var="x" dataSource="${con}"> 
-    SELECT  z.id, z.Ime,z.Prezime,z.Pozicija ,t.nazivTima ,p.naziv_projekta ,p.br_radnih_sati
+    SELECT  p.id, z.Ime,z.Prezime,z.Pozicija ,t.nazivTima ,p.naziv_projekta ,p.br_radnih_sati
     FROM zaposleni AS z 
     INNER JOIN tim AS t 
     ON
@@ -34,7 +34,7 @@
     </head>
     <body>
 
-        <div class="pozadinaDodavanjeTimaUProjekat">
+        <div class="pozadinaDodavaneZapolenogUTim">
             <div class="header">Projekat</div>
             <div class="divZaposleniTim">
                 <form action="dodavanjeTimaUProjekat" method="get"> 
@@ -81,9 +81,10 @@
                             <td>${y.Pozicija}</td>
                             <td>${y.nazivTima}</td>
                             <td>${y.naziv_projekta}</td>
-                            <td>${y.br_radnih_sati}</td>
+                            <td style="border: 1px;
+                                color: red;">${y.br_radnih_sati}</td>
 
-                            <td><a href="EditServletZaposlenog?id=${y.id}">Azuriraj</a></td>
+                            <td><a href="EditServletTimaUProjektu?id=${y.id}">Azuriranje</a></td>
                             <td><a href="DeleteFormaZaposlenog?id=${y.id}">Obrisi</a></td>
 
                         </tr>
@@ -94,10 +95,9 @@
 
             </div>
 
-        </div>
-        <div class="footer"><h6>© 2017 made by Nikola Mrkic </h6></div>
-    </div>
 
+        <div class="footer"><h6>© 2017 made by Nikola Mrkic </h6></div>
+        </div>
 
 
 </body>

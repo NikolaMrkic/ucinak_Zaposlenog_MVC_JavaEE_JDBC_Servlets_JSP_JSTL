@@ -34,8 +34,8 @@ public class EditServletZaposlenog extends HttpServlet {
         
       Zaposleni z  =  Kontroler.getInstance().vratiOdabranogZaposlenog(ID);
        request.setAttribute("Zaposleni", z);
-      //PrintWriter pw=response.getWriter();
-        //pw.print("Zaposleni");
+     // PrintWriter pw=response.getWriter();
+       // pw.print(ID);
         request.getRequestDispatcher("EditFormaZaposlenog.jsp").forward(request, response);
     }
 

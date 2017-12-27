@@ -24,7 +24,7 @@ h2{
     color: #fff;
 }
 .pozadinaDodavanjeTimaUProjekat{
-    background-image: url("/WEB/view/slide-1.jpg");
+    background-image: url('https://www.e-procurement.com/wp-content/uploads/2017/07/sliders-22.jpg');
     height: 100%;
 
     background-position: center;
@@ -32,7 +32,7 @@ h2{
     background-size: cover;
 }
 .pozadinaDodavaneZapolenogUTim{
-    background-image: url('http://www.guidescomparatifs.com/wp-content/uploads/2015/09/9.jpg');
+    background-image: url('https://www.e-procurement.com/wp-content/uploads/2017/07/sliders-22.jpg');
     height: 100%;
 
     background-position: center;
