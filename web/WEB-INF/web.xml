@@ -20,6 +20,18 @@
         <servlet-name>updateZaposlenog</servlet-name>
         <servlet-class>servleti.updateZaposlenog</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>unosTima</servlet-name>
+        <servlet-class>servleti.unosTima</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>dodavanjeTimaUProjekat</servlet-name>
+        <servlet-class>servleti.dodavanjeTimaUProjekat</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>unosTimaa</servlet-name>
+        <servlet-class>servleti.unosTimaa</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>logovanjeServlet</servlet-name>
         <url-pattern>/logovanjeServlet</url-pattern>
@@ -39,6 +51,18 @@
     <servlet-mapping>
         <servlet-name>updateZaposlenog</servlet-name>
         <url-pattern>/updateZaposlenog</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>unosTima</servlet-name>
+        <url-pattern>/unosTima</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>dodavanjeTimaUProjekat</servlet-name>
+        <url-pattern>/dodavanjeTimaUProjekat</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>unosTimaa</servlet-name>
+        <url-pattern>/unosTimaa</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
