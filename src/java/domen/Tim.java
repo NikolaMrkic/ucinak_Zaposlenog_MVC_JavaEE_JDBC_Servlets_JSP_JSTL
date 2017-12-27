@@ -11,7 +11,7 @@ package domen;
  */
 public class Tim {
     
-    private int id;
+    private int id,id_Zaposleni;
     private double brSati; 
     
     private String  nazivTima;
