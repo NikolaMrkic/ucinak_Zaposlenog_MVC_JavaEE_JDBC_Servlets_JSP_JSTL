@@ -6,13 +6,14 @@
 package domen;
 
 /**
- *
- * @author nikol
+ *  
+ * @author nikola
  */
 public class Tim {
     
     private int id,id_Zaposleni;
-    private double brSati;
+    private double brSati; 
+    
     private String  nazivTima;
 
     public int getId() {
