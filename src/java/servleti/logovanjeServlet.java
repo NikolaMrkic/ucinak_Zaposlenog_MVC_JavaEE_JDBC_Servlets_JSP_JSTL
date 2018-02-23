@@ -26,7 +26,29 @@ public class logovanjeServlet extends HttpServlet {
          
         response.setContentType("text/html;charset=UTF-8");
     
-        String korisnickoIme = request.getParameter("korisnickoIme");
+       
+       
+    }
+     
+     @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+
+    /**
+     * Handles the HTTP <code>POST</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+         String korisnickoIme = request.getParameter("korisnickoIme");
         String lozinka = request.getParameter("lozinka");
         
         boolean provera = false;
@@ -53,27 +75,7 @@ public class logovanjeServlet extends HttpServlet {
 	 request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
         
-       
-    }
-     
-     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
+        
     }
 
     /**

@@ -31,7 +31,7 @@
                     <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 showcase-content">
 
                         <h3>User Login</h3>
-                        <form  action="logovanjeServlet" method="get">
+                        <form  action="logovanjeServlet" method="POST">
                             <div class="input-filed">
                                 <label class="active" for="name">Username</label>
                                 <input type="text" id="name" name="korisnickoIme">
