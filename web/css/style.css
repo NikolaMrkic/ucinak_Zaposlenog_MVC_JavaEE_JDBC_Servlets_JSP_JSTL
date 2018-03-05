@@ -10,7 +10,6 @@ and open the template in the editor.
 
 
 
-<!-- css log in form -->
 <!-- Pozicioniranje Slike -->
 
 .pozadina{
@@ -23,9 +22,11 @@ width: 100%;
 height: 100%;
     }
 
+  #pozadinaH{
+    margin-top: 8px;
+    border-bottom: #40E0D0 3px solid;
 
-
-
+  }
 #showcase .showcase-content{
   background: #333;
   color: #fff;
@@ -73,276 +74,169 @@ height: 100%;
         bottom: 0;
         width: 100%;
         height: 50px;
-        background-color: #333;
+        background-color: #35424a;
+        color: #fff;
+        text-align: center;
+}
+.homePage-footer{
+  position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 50px;
+        background-color: #35424a;
         color: #fff;
         text-align: center;
 }
 
 
-
-
-<!--  kraj log in-->
 body{
-    margin: 0;
-    padding: 0;
-
-
-}
-body, html {
-    height: 100%;
+  font: 15px/1.5 Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin:0;
+  background-color: #white;
+  background-size: cover;
 }
 
-h1{
-    color: #000000;
-}
-h2{
-    color: #fff;
-}
-.pozadinaDodavanjeTimaUProjekat{
-    background-image: url('https://www.e-procurement.com/wp-content/uploads/2017/07/sliders-22.jpg');
-    height: 100%;
-
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.pozadinaDodavaneZapolenogUTim{
-    background-image: url('https://www.e-procurement.com/wp-content/uploads/2017/07/sliders-22.jpg');
-    height: 100%;
-
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-}
-.pozadinaPocetneForme{
-
-
-    background-image: url('http://blog.blominvestbank.com/wp-content/uploads/2017/10/pmi-6.jpg');
-    height: 100%;
-
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.pozadinaUnosZaposlenog{
-    background-image: url('http://www.factorasolutions.com/wp-content/uploads/Is-an-OEE-system-the-rapid-route-to-a-better-OEE.jpg');
-    height: 100%;
-
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+/* Globalni */
+.container{
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
 }
 
-.pozadina{
-    background-image: url('http://www.factorasolutions.com/wp-content/uploads/Is-an-OEE-system-the-rapid-route-to-a-better-OEE.jpg');
-    height: 100%;
-
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.pozadinaEditFormaZaposlenog{
-
-    background-image: url('https://hdwallsource.com/img/2017/12/business-desktop-hd-wallpaper-61250-63064-hd-wallpapers.jpg');
-    /* Full height */
-    height: 100%; 
-
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
+/* Header */
+header{
+  background: #35424a;
+  color: #ffffff;
+  padding-top: 30px;
+  min-height: 70px;
+  border-bottom: #40E0D0 7px solid;
 }
 
-.promenaZaposlenog{
-    margin-right: auto; margin-left: auto; width: 800px;
-
+header a{
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 17px;
 }
 
-.promenaZaposlenog  .btnPromeniZaposlenog{
-    padding: 5px;
-    width: 420px;
-    height: 40px;
-    background-color: #349Bdb;
-    color: #fff;
-    border-radius: 3px;
-    border: 0;
-    font-size: 18px;
-    margin-right: auto; margin-left: auto;
-}
-.btnPromeniZaposlenog{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+header ul{
+  margin: 0;
+  padding: 0;
 }
 
+header li{
+  float: left;
+  display: inline;
+  padding: 0 10px 0 10px;
+}
 
-.divLogIn{
-    width: 450px;
-    overflow:  hidden;
-    margin: auto;
-    margin-top: auto;
+header #logo{
+  float:left;
+    margin-bottom:  15px;
+}
+
+header #logo h1{
+  margin: 0;
+  color:  #40E0D0;
+}
+
+header nav{
+  float: right;
+  margin-top: 10px;
+}
+
+header .highlight, header .current a {
+  color: #40E0D0;
+  font-weight: bold;
+}
+
+header a:hover{
+  color: #cccccc;
+  font-weight: bold;
+}
+header img{
+  width: 150px;
+  height: 110px;
+}
+/* Boxes */
+
+#boxes .box{
+  float: left;
+  text-align: center;
+  width: 30%;
+  padding: 18px;
+  margin-top: 1px;
+    background-color: white;
 
 }
 
-.divLogIn input{
-    width: 410px;
-    height: 35px;
-    margin-bottom: 10px;
-    border-radius:  10px;
-    border: 1px solid silver;
-    padding: 5px;
+#boxes .box img{
+  width: 90px;
 }
 
-.divLogIn h1{
+/* Employee page */
 
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.divLogIn .btnLogIn{
-    padding: 5px;
-    width: 420px;
-    height: 40px;
-    background-color: #349Bdb;
-    color: #fff;
-    border-radius: 3px;
-    border: 0;
-    font-size: 18px;
-}
-
-.divZaposleniTim{
-    width: 450px;
-    overflow:  hidden;
-    margin: auto;
-    margin-top: auto;
-
-}
-.divZaposleniTim input{
-    width: 420px;
-    height: 35px;
-
-    margin-bottom: 10px;
-    border-radius:  10px;
-    border: 1px solid silver;
-    padding: 5px;
-}
-
-.divZaposleniTim .btnZaposleniTim{
-    padding: 5px;
-    width: 420px;
-    height: 40px;
-    background-color: #349Bdb;
-    color: #fff;
-    border-radius: 3px;
-    border: 0;
-    font-size: 18px;
-}
-.combobox{
-
-
-    left: auto;
-    width: 421px;
-    height: 23px;
-    margin-top: 10px;
-
-}
-.divZaposleniTim h1 {
-
-    text-align: center;
-    margin-bottom: 30px;
-    margin-top:  auto;
-}
-
-
-.header{
-    width:auto;
-    height: 50px;
-    margin: auto;
-    border: 1px solid #000000;
-    background-color: #349Bdb;
-
-    text-align: center;
+.unosZaposlenog{
+  position: absolute;
+  top: 70%;
+  left: 25%;
+  transform: translate(-75%,-55%);
+  width: 380px;
+  height: 600px;
+  padding: 55px 80px;
+  box-sizing: border-box;
+  background: #35424a;
+  opacity: 0.9;
+  border-radius: 6%;
+  text-align: center;
 
 }
 
-.headerPocetnaStrana{
-    height: 50px;
-    width:auto;
-    margin: auto;
-    border: 1px solid #000000;
-    background-color:#349Bdb;
-    color: #fff;
-    text-align: left;
-
-
+.zaposleni{
+  width: 100px;
+  height: 100px;
+  border-radius: 70%;
+  overflow: hidden;
+  top: calc(-100px/2);
+  left: calc(50%-50px);
+  text-align: center;
 
 }
-
-
-.footer{ position: fixed;
-         left: 0;
-         bottom: 0;
-         width: 100%;
-         height: 50px;
-         background-color: #349Bdb;
-         color: #fff;
-         text-align: center;
+.unosZaposlenog h1 {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  color: white;
+}
+.unosZaposlenog input{
+  width: 100%;
+  margin-bottom: 20px;
 }
 
-
-
-.btnDodajZaposlenog {
-    padding: 5px;
-    width: 420px;
-    height: 40px;
-    background-color: #349Bdb;
-    color: #fff;
-    border-radius: 10px;
-    border: 0;
-    font-size: 18px;
-    margin-left: 465px;
-    margin-top: 102px;
+.unosZaposlenog input[type="text"]{
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: #fff;
+  font-size: 16px;
 }
-#divUnosZaposlenog{
-
-}
-
-#tabelaUnosZaposlenih{
-    border-collapse: collapse;
-    width: 100%;
-}
-#tabelaUnosZaposlenih th, td{
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even){background-color: #f2f2f2}
-
-
-#tabelaUnosZaposlenihth {
-    background-color: #4CAF50;
-    color: white;
-
-}
-.btnUnesiZaposlenog{
-    padding: 5px;
-    width: 420px;
-    height: 40px;
-    background-color: #349Bdb;
-    color: #fff;
-    border-radius: 3px;
-    border: 0;
-    font-size: 18px;
-    margin-left: 450px;
+.unosZaposlenog input[type="Submit"]:hover{
+  background: #efed40;
+  color: #262626;
 
 }
 
 
 #tabelaPrikazZaposlenihth{
     border-collapse: collapse;
-    width: 100%;
+    margin-top: 50px;
+    width:70%;
+   margin-left:30%;
+   margin-right:15%;
 }
 
 #tabelaPrikazZaposlenihth th, td {
@@ -353,33 +247,20 @@ tr:nth-child(even){background-color: #f2f2f2}
 tr:nth-child(even){background-color: #f2f2f2}
 
 #tabelaPrikazZaposlenihth th {
-    background-color: #4CAF50;
+    background-color: #40E0D0;
     color: white;
 }
-
-
-#tabelaPrikazZaposlenogINjegovogUcinka{
-    border-collapse: collapse;
-    width: 100%;
-}
-#tabelaPrikazZaposlenogINjegovogUcinka th {
-    text-align: left;
-    padding: 8px;
-
-}
-#tabelaPrikazZaposlenogINjegovogUcinka  td{
-    text-align: left;
-    padding: 8px;
-    color: black
+.btnUnesiZaposlenog{
+    padding: 5px;
+    width: 200px;
+    height: 40px;
+    background-color: #40E0D0;
+    color: #fff;
+    border-radius: 3px;
+    border: 0;
+    font-size: 18px;
+    margin-left: 5px;
 
 }
-
-
-tr:nth-child(even){background-color: #f2f2f2}
-
-
-
-#tabelaPrikazZaposlenogINjegovogUcinka {
-    background-color: #4CAF50;
-    color: white;
-}
+<!-- css log in form -->
+<!-- Pozicioniranje Slike -->

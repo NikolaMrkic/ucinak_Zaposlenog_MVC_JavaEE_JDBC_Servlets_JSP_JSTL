@@ -30,14 +30,9 @@ public class unosZaposlenog extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-          String ime = request.getParameter("tfIme");
-        String prezime = request.getParameter("tfPrezime");
-        int jmbg = Integer.parseInt(request.getParameter("tfJmbg"));
-        String pozicija = request.getParameter("tfPozicija");
-        
-        Kontroler.getInstance().UpisiZaposlenog(ime,prezime,jmbg,pozicija);
-         request.getRequestDispatcher("unosZaposlenog.jsp").forward(request, response);
+         response.setContentType("text/html;charset=UTF-8");
+       
+      
     }
 
    
@@ -53,6 +48,13 @@ public class unosZaposlenog extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
        
+           String ime = request.getParameter("tfIme");
+        String prezime = request.getParameter("tfPrezime");
+        int jmbg = Integer.parseInt(request.getParameter("tfJmbg"));
+        String pozicija = request.getParameter("tfPozicija");
+        
+        Kontroler.getInstance().UpisiZaposlenog(ime,prezime,jmbg,pozicija);
+         request.getRequestDispatcher("pocetna.jsp").forward(request, response);
     }
 
     
