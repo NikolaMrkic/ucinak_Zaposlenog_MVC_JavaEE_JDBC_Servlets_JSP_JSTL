@@ -276,4 +276,17 @@ public class DBKomunikacija {
         }
         return p;
     }
+    
+    public void obrisiOdredjeniProjekat(int ID) {
+        
+         String upit = "DELETE FROM projekat WHERE id=" + ID;
+
+        try {
+            Statement st = con.createStatement();
+            st.executeUpdate(upit);
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DBKomunikacija.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }

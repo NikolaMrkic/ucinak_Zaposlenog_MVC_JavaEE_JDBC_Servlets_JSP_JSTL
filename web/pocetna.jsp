@@ -40,6 +40,9 @@
                         <li><a href="unosZaposlenog.jsp">Employee</a></li>
                         <li><a href="dodavanjeZaposlenogUtim.jsp">Team</a></li>
                         <li><a href="dodavanjeTimaUProjekat.jsp">Project</a></li>
+                        <li><a href="EditFormaTimaUProjektu.jsp">Projectedit</a></li>
+
+                        
                     </ul>
                 </nav>
             </div>

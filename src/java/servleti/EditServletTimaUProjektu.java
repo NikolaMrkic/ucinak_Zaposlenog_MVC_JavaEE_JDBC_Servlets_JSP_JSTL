@@ -5,7 +5,6 @@
  */
 package servleti;
 
-import domen.Tim;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -13,12 +12,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import kontroler.Kontroler;
+import domen.Projekat;
 
 /**
  *
  * @author nikol
  */
-public class dodavanjeTimaUProjekat extends HttpServlet {
+public class EditServletTimaUProjektu extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,6 +33,16 @@ public class dodavanjeTimaUProjekat extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
+       String id = request.getParameter("id");
+        int ID = Integer.parseInt(id);
+
+        Projekat p = Kontroler.getInstance().vratiOdabraniTimUProjektu(ID);
+       request.setAttribute("Projekat", p);
+        //PrintWriter pw = response.getWriter();
+        //pw.print(ID);
+      
+       
+        request.getRequestDispatcher("EditFormaTimaUProjektu.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -49,24 +59,16 @@ public class dodavanjeTimaUProjekat extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
 
-        String tim = request.getParameter("cbTim");
-        //String ime= Tim.substring(0, Tim.indexOf(" "));
-
-        int idTima = 0;
-        for (Tim t : Kontroler.getInstance().vratiTim()) {
-            if (t.getNazivTima().equalsIgnoreCase(tim)) {
-                idTima = t.getId();
-                // System.out.println(z.getId());
-            }
-        }
-        String nazivProjekta = request.getParameter("nazivProjektaa");
-        double brSati = Double.parseDouble(request.getParameter("brRadihSati"));
-        Kontroler.getInstance().unesiTimUProjekat(nazivProjekta, brSati, idTima);
-        // PrintWriter pw=response.getWriter();
-        // pw.print("Naziv tima je "+"'"+tim +"'"+" ID TIMA JE "+idTima+" NAziv Projekta "+ nazivProjekta+" Br.SAti "+brSati);
-        request.getRequestDispatcher("dodavanjeTimaUProjekat.jsp").forward(request, response);
     }
 
+    /**
+     * Handles the HTTP <code>POST</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

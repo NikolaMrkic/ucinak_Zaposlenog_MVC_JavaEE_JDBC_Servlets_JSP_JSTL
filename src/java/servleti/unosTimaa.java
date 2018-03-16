@@ -50,7 +50,21 @@ public class unosTimaa extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
         
-        String Zaposleni = request.getParameter("cbZaposleni");
+    }
+    /**
+     * Handles the HTTP <code>POST</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+        
+                String Zaposleni = request.getParameter("cbZaposleni");
         String ime= Zaposleni.substring(0, Zaposleni.indexOf(" "));
         
         int idZaposlenog = 0;
@@ -68,19 +82,7 @@ public class unosTimaa extends HttpServlet {
        request.getRequestDispatcher("dodavanjeZaposlenogUtim.jsp").forward(request, response);
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
+    
 
     /**
      * Returns a short description of the servlet.

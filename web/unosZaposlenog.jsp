@@ -82,27 +82,21 @@
             <table id="tabelaPrikazZaposlenihth">
 
                 <tr>
-                   
                     <th>Name</th>
                     <th>Surname</th>
                     <th>Id card</th>
                     <th>Position</th>
                     <th>Edit</th>
                     <th>Delete</th>
-
                 </tr>
                 <c:forEach var="y" items="${x.rows}">
                     <tr>
-
-                       
                         <td>${y.Ime}</td>
                         <td>${y.Prezime}</td>
                         <td>${y.jmbg}</td>
                         <td>${y.Pozicija}</td>
-
                         <td><a href="EditServletZaposlenog?id=${y.id}">Promeni</a></td>
                         <td><a href="DeleteFormaZaposlenog?id=${y.id}">Obrisi</a></td>
-
                     </tr>
                 </c:forEach>
             </table>

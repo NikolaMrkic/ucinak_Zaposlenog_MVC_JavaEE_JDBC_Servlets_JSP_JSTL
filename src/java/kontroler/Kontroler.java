@@ -107,5 +107,12 @@ public class Kontroler {
         DBKomunikacija.getInstance().zatvoriKonekciju();
         return p;
     }
+    
+     public void obrisiOdredjeniProjekat(int ID) {
+        DBKomunikacija.getInstance().otvoriKonekciju();
+        DBKomunikacija.getInstance().obrisiOdredjeniProjekat(ID);
+        DBKomunikacija.getInstance().zatvoriKonekciju();
+    }
+
 
 }
