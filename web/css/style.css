@@ -221,11 +221,11 @@ header img{
 
 .unosZaposlenog{
   position: absolute;
-  top: 65%;
+  top: 68%;
   left: 22%;
   transform: translate(-75%,-55%);
   width: 300px;
-  height: 520px;
+  height: 540px;
   padding: 0px 50px;
   box-sizing: border-box;
   background: #35424a;
@@ -347,5 +347,68 @@ tr:nth-child(even){background-color: #f2f2f2}
     justify-content: center;
 }
 
-<!-- css log in form -->
-<!-- Pozicioniranje Slike -->
+.unosT{
+  position: absolute;
+  top: 45%;
+  left: 22%;
+  transform: translate(-75%,-55%);
+  width: 300px;
+  height: 265px;
+  padding: 0px 50px;
+  box-sizing: border-box;
+  background: #35424a;
+  opacity: 0.9;
+  border-radius: 6%;
+  text-align: center;
+
+}
+
+.unosT h1 {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  color: white;
+}
+.unosT input{
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.unosT input[type="text"]{
+  border: none;
+  border-bottom: 2px solid #40E0D0;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: #40E0D0;
+  font-size: 16px;
+}
+.unosT input[type="Submit"]:hover{
+  background: #efed40;
+  color: #262626;
+
+}
+
+/* body select.select_box */ body select { 
+    display: block;
+    padding: 10px 70px 10px 17px !important;
+    max-width: 100%; height: auto !important;
+    border: 1px solid #e3e3e3;
+    border-radius: 3px;
+    background: url("https://image.ibb.co/iMeAJv/selectbox_arrow.png") right center no-repeat;
+    background-color: #40E0D0;
+    color: #ffffff; 
+    font-size: 14px;
+    line-height: 16px !important;
+    appearance: none; 
+    /* this is must */
+    -webkit-appearance: none;
+    -moz-appearance: none; } 
+/* body select.select_box option */
+body select option { padding: 0 4px; }
+/* for IE and Edge */
+select::-ms-expand 
+{ display: none; }
+select:disabled::-ms-expand { background: #f60; }
+
+
